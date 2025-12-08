@@ -2,49 +2,90 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Brief description of the page" />
-  <meta name="theme-color" content="#0a74da" />
 
-  <!-- Open Graph / Social preview -->
-  <meta property="og:title" content="Page Title" />
-  <meta property="og:description" content="Brief description for social cards" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/path/to/preview.png" />
+  <title>Data Dashboard</title>
 
-  <title>Page Title</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #222;
+    }
 
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" />
+    header {
+      background: #0a74da;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css" />
+    h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
 
-  <!-- Optional: fonts or preconnects -->
-  <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"> -->
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    /* Responsive iframe wrapper */
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      background: white;
+    }
+
+    .iframe-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+      color: #555;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
+
 <body>
   <header>
-    <h1>Page Title</h1>
+    <h1>Data Dashboard</h1>
   </header>
 
-<iframe title="TOUR Data Organizer (11232025)" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=ea4af954-553c-4299-a482-f8a9cad8e451&autoAuth=true&ctid=589c76f5-ca15-41f9-884b-55ec15a0672a" frameborder="0" allowFullScreen="true"></iframe>
-  <main id="main" role="main">
-    <!-- Your content -->
-  </main>
+  <div class="container">
+    <div class="iframe-wrapper">
+      <iframe 
+        title="TOUR Data Organizer (11232025)" 
+        src="https://app.powerbi.com/reportEmbed?reportId=ea4af954-553c-4299-a482-f8a9cad8e451&autoAuth=true&ctid=589c76f5-ca15-41f9-884b-55ec15a0672a" 
+        allowfullscreen="true">
+      </iframe>
+    </div>
+  </div>
 
   <footer>
-    <p>&copy; <span id="year"></span> Your Name</p>
+    &copy; <span id="year"></span> Damon Chase
   </footer>
 
-  <!-- Scripts -->
   <script>
-    // Simple script: set year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-  <script src="app.js" defer></script>
 </body>
 </html>
-
