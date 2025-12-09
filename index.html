@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Data Dashboard</title>
+  <title>Prague Data Dashboard</title>
 
   <style>
     body {
@@ -17,39 +17,43 @@
     header {
       background: #0a74da;
       color: white;
-      padding: 1rem 2rem;
+      padding: 1.5rem 2rem;
       text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
 
     h1 {
       margin: 0;
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: 600;
     }
 
     .container {
       width: 100%;
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
 
-    /* Responsive iframe wrapper */
-    .iframe-wrapper {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%; /* 16:9 ratio */
-      height: 0;
-      overflow: hidden;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      background: white;
+    h2 {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+      color: #0a3e8c;
     }
 
-    .iframe-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
+    /* iframe panel */
+    .iframe-panel {
+      width: 100%;
+      height: 90vh; /* takes up 90% of screen height */
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      margin-bottom: 2rem;
+    }
+
+    .iframe-panel iframe {
       width: 100%;
       height: 100%;
       border: none;
@@ -57,7 +61,7 @@
 
     footer {
       text-align: center;
-      padding: 1rem;
+      padding: 2rem 1rem;
       margin-top: 3rem;
       color: #555;
       font-size: 0.9rem;
@@ -66,15 +70,40 @@
 </head>
 
 <body>
+
   <header>
-    <h1>Data Dashboard</h1>
+    <h1>Prague Tourism Data Dashboard</h1>
   </header>
 
   <div class="container">
-    <div class="iframe-wrapper">
-        <iframe title="TOUR Data Organizer (11232025)" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=ea4af954-553c-4299-a482-f8a9cad8e451&autoAuth=true&ctid=589c76f5-ca15-41f9-884b-55ec15a0672a"
-         frameborder="0" allowFullScreen="true"></iframe>
+
+    <!-- Tourists -->
+    <h2>Tourists</h2>
+    <div class="iframe-panel">
+      <iframe 
+        src="https://app.powerbi.com/reportEmbed?reportId=cbe2b8c3-2542-4914-ac59-a2ee1076cc02&autoAuth=true&ctid=589c76f5-ca15-41f9-884b-55ec15a0672a"
+        allowFullScreen="true">
+      </iframe>
     </div>
+
+    <!-- Residents In-Person -->
+    <h2>Residents — In-Person Surveys</h2>
+    <div class="iframe-panel">
+      <iframe 
+        src="https://app.powerbi.com/reportEmbed?reportId=cbe2b8c3-2542-4914-ac59-a2ee1076cc02&autoAuth=true&ctid=589c76f5-ca15-41f9-884b-55ec15a0672a"
+        allowFullScreen="true">
+      </iframe>
+    </div>
+
+    <!-- Residents Online -->
+    <h2>Residents — Online Surveys</h2>
+    <div class="iframe-panel">
+      <iframe 
+        src="https://app.powerbi.com/reportEmbed?reportId=cbe2b8c3-2542-4914-ac59-a2ee1076cc02&autoAuth=true&ctid=589c76f5-ca15-41f9-884b-55ec15a0672a"
+        allowFullScreen="true">
+      </iframe>
+    </div>
+
   </div>
 
   <footer>
@@ -84,5 +113,6 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
