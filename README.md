@@ -1,2 +1,2 @@
 # Permissions
-You need to be on a "viewer" list to have access to the Power BI visuals.
+You need to have explicit access to view the Power BI visuals.
